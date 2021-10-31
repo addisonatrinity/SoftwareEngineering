@@ -1,4 +1,4 @@
-
+import networkx as nx           #find the shortest path between nodes in a directed graph
 from Graph import Graph
 
 class node:
@@ -37,13 +37,14 @@ root.right.right = node(7)
  #     4   5  6   7
 
 #imported a graph class from python libraries, created a graph with associaed vertices/edges.
-Graph.add_edges_from([(1, 2), (1, 3), (1, 4), (2, 4), (3, 4), (3, 5), (4, 5)])
+G=nx.DiGraph()
+G.add_edges_from([(1, 2), (1, 3), (1, 4), (2, 4), (2,5), (3, 4), (3, 5), (4, 5)])
 
 #   
 #       (1)_____
 #      /   \    \
 #   (2)    (3)    \
-#    \    /  \    |
-#   -->(4)    |   |
-#        \    |  /
-#             (5)
+#   / \    /  \    |
+#  / -->(4)    |   |
+#  |      \    |  /
+#   \_______ (5) /

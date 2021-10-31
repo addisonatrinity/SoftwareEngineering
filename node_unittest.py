@@ -52,16 +52,14 @@ class TestLca(unittest.TestCase):
         self.assertEqual(test9, None)
 
     def test_DAG(self):
-     Graph.add_edges_from([(1, 2), (1, 3), (1, 4), (2, 4), (2,5), (3, 4), (3, 5), (4, 5)])
+        dagtest1 = node.findLCA(Graph, 2,3)
+        self.assertEqual(dagtest1, 1)
 
-    dagtest1 = node.findLCA(Graph, 2,3)
-    self.assertEqual(dagtest1, 1)
+        dagtest2 = node.findLCA(Graph,2,5)
+        self.assertEqual(dagtest2, 2)
 
-    dagtest2 = node.findLCA(Graph,2,5)
-    self.assertEqual(dagtest2, 2)
-
-    dagtest3 = node.findLCA(Graph,1,4)
-    self.assertEqual(dagtest3, 1)
+        dagtest3 = node.findLCA(Graph,1,4)
+        self.assertEqual(dagtest3, 1)
 
 if __name__ == '__main__':
     unittest.main()
